@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Hub</title>
+  <link rel="icon" type="image/png" href="https://tse1.mm.bing.net/th/id/OIP.9x0bbl0uQKM2vwy_eG9OWgHaHa?w=512&h=512">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #100303;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .home-page {
+      width: 350px;
+      background-color: hsl(0, 0%, 19%);
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .home-page h2 {
+      margin-bottom: 20px;
+    }
+
+    .access-id-box {
+      background-color: #f5efef;
+      color: #000000;
+      border-radius: 6px;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .access-id-box label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .access-id-box input {
+      width: 90%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .access-id-box button {
+      margin-top: 12px;
+      padding: 8px 16px;
+      background-color: #0050ef;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    } 
+
+    .access-id-box button:hover {
+      background-color: #003bb5;
+    }  .error {
+      color: red;
+      margin-top: 10px;
+      display: n; /* hidden by default */
+    }
+  </style>
+</head>
+<body>
+  <div class="home-page">
+    <h2>Trevor's Resume Hub</h2>
+    <div class="access-id-box">
+      <label for="accessId">Enter Access ID</label>
+      <input type="password" id="accessId" placeholder="Enter Access ID">
+        <button onclick="validateId()">Submit</button>
+    <p id="errorMsg" class="error">Access Denied. Invalid ID.</p>
+    </div>
+  </div>
+  <script>
+    
+    function validateId() {
+      const accessId = document.getElementById('accessId').value;
+      const errorMsg = document.getElementById('errorMsg');
+
+      if (accessId == "333@86") {
+        window.location.href = 'ResumeHub.html';
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

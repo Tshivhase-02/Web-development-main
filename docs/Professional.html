@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional CV</title>
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat', sans-serif;
+    background:#f1f1f1;
+    color:#1f2a44;
+    padding:40px;
+}
+
+.cv-container{
+    max-width:1000px;
+    margin:auto;
+    background:#fff;
+    border:2px solid #4b5563;
+    padding:50px;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.header h1{
+    font-size:3rem;
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.header h2{
+    font-size:1.3rem;
+    font-weight:400;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-top:10px;
+}
+
+.contact{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:15px;
+    border-top:2px solid #6b7280;
+    border-bottom:2px solid #6b7280;
+    padding:15px 0;
+    margin-bottom:35px;
+    font-size:14px;
+}
+
+.contact a{
+    text-decoration:none;
+    color:#1f2a44;
+    font-weight:500;
+}
+
+.contact a:hover{
+    text-decoration:underline;
+}
+
+.section{
+    margin-bottom:35px;
+}
+
+.section-title{
+    font-size:2rem;
+    font-weight:800;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.divider{
+    border-bottom:2px solid #6b7280;
+    margin-bottom:20px;
+}
+
+.about-text{
+    line-height:1.8;
+    color:#444;
+}
+
+.timeline-item{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:25px;
+    margin-bottom:25px;
+}
+
+.date{
+    font-weight:700;
+}
+
+.organization{
+    margin-top:5px;
+    color:#555;
+}
+
+.details h4{
+    margin-bottom:8px;
+    font-size:1.2rem;
+}
+
+.details p{
+    color:#444;
+    line-height:1.6;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    list-style-position:inside;
+}
+
+.skills li{
+    margin-bottom:8px;
+}
+
+.projects-grid,
+.cert-grid{
+    display:grid;
+    gap:20px;
+}
+
+.card{
+    background:#f8f8f8;
+    border-left:4px solid #1f2a44;
+    padding:15px;
+}
+
+.card h4{
+    margin:8px 0;
+}
+
+.card p{
+    color:#444;
+}
+
+.references{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.reference p{
+    color:#444;
+    margin-top:5px;
+}
+
+@media(max-width:768px){
+
+    .timeline-item{
+        grid-template-columns:1fr;
+    }
+
+    .skills{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .contact{
+        flex-direction:column;
+    }
+
+    .header h1{
+        font-size:2rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="cv-container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Zwavhudi Travor Tshivhase</h1>
+        <h2>Software Developer Trainee</h2>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact">
+        <span>📞 +27 60 816 4224</span>
+        <span>📍 Diepsloot, Johannesburg</span>
+        <span>✉ zwavhudigeneral02@gmail.com</span>
+
+        <span>
+            🔗
+            <a href="https://www.linkedin.com/in/zwavhudi-tshivhase-8b989a297" target="_blank">
+                LinkedIn
+            </a>
+        </span>
+
+        <span>
+            💻
+            <a href="https://github.com/Tshivhase-02" target="_blank">
+                GitHub
+            </a>
+        </span>
+    </div>
+
+    <!-- About -->
+    <div class="section">
+        <h3 class="section-title">About Me</h3>
+        <div class="divider"></div>
+
+        <p class="about-text">
+            Computer Science graduate with experience in RPA Support and a strong foundation
+            in software development. Currently pursuing Software Development NQF Level 5 to
+            enhance technical expertise. Passionate about building reliable software,
+            solving complex problems, and continuously learning emerging technologies.
+        </p>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h3 class="section-title">Education</h3>
+        <div class="divider"></div>
+
+        <div class="timeline-item">
+            <div>
+                <div class="date">2026 - Present</div>
+                <div class="organization">Dynamic DNA</div>
+            </div>
+
+            <div class="details">
+                <h4>Software Development NQF Level 5</h4>
+                <p>
+                    Currently pursuing practical and theoretical skills in software
+                    engineering, programming, and application development.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div>
+                <div class="date">2021 - 2025</div>
+                <div class="organization">University of Venda</div>
+            </div>
+
+            <div class="details">
+                <h4>Bachelor of Science in Computer Science</h4>
+                <p>
+                    Focused on software development, databases, networking,
+                    algorithms, and system design.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+        <h3 class="section-title">Experience</h3>
+        <div class="divider"></div>
+
+        <div class="timeline-item">
+            <div>
+                <div class="date">2025 - 2026</div>
+                <div class="organization">Nedbank</div>
+            </div>
+
+            <div class="details">
+                <h4>Automation Support Specialist</h4>
+                <p>
+                    Provided production support for robotic process automation
+                    solutions, monitored automated processes, investigated incidents,
+                    and resolved automation-related issues.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Certifications -->
+    <div class="section">
+        <h3 class="section-title">Certifications</h3>
+        <div class="divider"></div>
+
+        <div class="cert-grid">
+
+            <div class="card">
+                <h4>GenAI for Software Engineers</h4>
+                <p>WeThinkCode • 2026</p>
+            </div>
+
+            <div class="card">
+                <h4>Bachelor of Science in Computer Science</h4>
+                <p>University of Venda • 2025</p>
+            </div>
+
+            <div class="card">
+                <h4>Digital Learning</h4>
+                <p>YES Employment Service • 2025</p>
+            </div>
+
+            <div class="card">
+                <h4>Entrepreneurship</h4>
+                <p>YES Employment Service • 2025</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Professional Development -->
+    <div class="section">
+        <h3 class="section-title">Professional Development</h3>
+        <div class="divider"></div>
+
+        <div class="projects-grid">
+
+            <div class="card">
+                <div class="date">2026 - Enrolled</div>
+                <h4>FNB App Academy</h4>
+            </div>
+
+            <div class="card">
+                <div class="date">2026 - Enrolled</div>
+                <h4>Software Development NQF Level 5</h4>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <h3 class="section-title">Skills</h3>
+        <div class="divider"></div>
+
+        <ul class="skills">
+            <li>Problem Solving & Logical Reasoning</li>
+            <li>Team Collaboration</li>
+            <li>Incident Management Process</li>
+            <li>OOP (Python & Java)</li>
+            <li>RESTful APIs</li>
+            <li>Robotic Process Automation</li>
+            <li>Blue Prism</li>
+            <li>Prompt Engineering</li>
+            <li>MySQL</li>
+            <li>Git & GitHub</li>
+            <li>Software Testing</li>
+            <li>Debugging</li>
+            
+        </ul>
+    </div>
+
+    <!-- References -->
+    <div class="section">
+        <h3 class="section-title">References</h3>
+        <div class="divider"></div>
+
+        <div class="references">
+            <div class="reference">
+         
+                <p>Available Upon Request
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

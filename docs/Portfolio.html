@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://img.icons8.com/?size=96&id=DYoTRhf8VVC1&format=png">
+
+<title>Enterprise Resume Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#0f172a;
+    --card:#42474e;
+    --primary:#3b82f6;
+    --secondary:#06b6d4;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --border:rgba(59,130,246,.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    backdrop-filter:blur(12px);
+    background:rgba(15,23,42,.9);
+    border-bottom:1px solid var(--border);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:var(--primary);
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--secondary);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    padding:120px 8% 80px;
+}
+
+.profile{
+    width:280px;
+    height:280px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid var(--primary);
+    box-shadow:
+    0 0 30px rgba(59,130,246,.5),
+    0 0 80px rgba(59,130,246,.2);
+}
+
+.hero-content h1{
+    font-size:4rem;
+    line-height:1.1;
+}
+
+.hero-content span{
+    color:var(--secondary);
+}
+
+.hero-content p{
+    color:var(--muted);
+    margin:20px 0;
+    max-width:650px;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:30px;
+    background:rgba(6,182,212,.15);
+    border:1px solid rgba(6,182,212,.4);
+    margin-bottom:20px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 25px;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.primary{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+}
+
+.secondary{
+    border:1px solid var(--border);
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+/* SECTION */
+
+.section{
+    max-width:1200px;
+    margin:50px auto;
+    padding:40px;
+    background:rgba(30,41,59,.6);
+    border:1px solid var(--border);
+    border-radius:24px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.4rem;
+    margin-bottom:30px;
+}
+
+.about{
+    text-align:center;
+    line-height:1.9;
+    color:var(--muted);
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.stat{
+    padding:25px;
+    background:var(--card);
+    border-radius:18px;
+    text-align:center;
+    border:1px solid var(--border);
+}
+
+.stat h3{
+    color:var(--secondary);
+    font-size:2rem;
+}
+
+/* TIMELINE */
+
+.timeline{
+    position:relative;
+    padding-left:40px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:8px;
+    width:3px;
+    height:100%;
+    background:var(--primary);
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:30px;
+    background:var(--card);
+    padding:20px;
+    border-radius:16px;
+    border:1px solid var(--border);
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-39px;
+    top:25px;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    background:var(--secondary);
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:var(--secondary);
+    margin-bottom:10px;
+}
+
+/* SKILLS */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+
+.skill{
+    padding:12px 20px;
+    border-radius:40px;
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+    font-weight:600;
+}
+
+/* CONTACT FORM */
+
+.contact-form{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    background:var(--card);
+    color:white;
+    border:1px solid var(--border);
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.contact-form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    font-weight:600;
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+}
+
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.contact-card{
+    background:var(--card);
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    border:1px solid var(--border);
+}
+
+footer{
+    text-align:center;
+    color:var(--muted);
+    padding:40px;
+}
+
+@media(max-width:768px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-content h1{
+        font-size:2.7rem;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .profile{
+        width:220px;
+        height:220px;
+    }
+
+    .section{
+        margin:20px;
+        padding:25px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+
+<div class="logo">ZT</div>
+
+<ul>
+
+ <li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#learning">Learning</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+</header>
+
+<section class="hero">
+
+<img src="https://media.licdn.com/dms/image/v2/D4D03AQFilCeSY34jJg/profile-displayphoto-crop_800_800/B4DZ7WTguqIEAQ-/0/1781711901061?e=1785974400&v=beta&t=-MriEcx70geav2YjWc7MicYZd3QFu3nwHn1MKGTrzzs" alt="Zwavhudi Tshivhase" class="profile">
+
+<div class="hero-content">
+
+<div class="badge">✅ Available for Opportunities</div>
+
+<h1>
+Zwavhudi Travor
+<span>Tshivhase</span>
+</h1>
+
+<p>
+Software Developer Trainee | Automation Support Specialist 
+</p>
+
+<div class="buttons">
+
+<a href="docs/Professional.html" class="btn primary">
+
+
+📄 View Resume
+</a>
+
+
+</div>
+
+</div>
+</section>
+
+<!-- About Me -->
+
+
+<section id="about" class="section">
+
+<h2 class="section-title">About Me</h2>
+
+<p class="about">
+Computer Science graduate with experience in Robotic Process Automation support and software development. Currently pursuing Software Development NQF Level 5 through Dynamic DNA. Passionate about creating reliable software solutions, solving complex technical problems and continuously learning emerging technologies.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">Achievements</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3>BSc</h3>
+<p>Computer Science Graduate</p>
+</div>
+
+<div class="stat">
+<h3>4+</h3>
+<p>Certifications</p>
+</div>
+
+<div class="stat">
+<h3>10+</h3>
+<p>Technical Skills</p>
+</div>
+
+<div class="stat">
+<h3>1+</h3>
+<p>Years Experience</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Education -->
+
+<section id="education" class="section">
+
+<h2 class="section-title">Education</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Software Development NQF Level 5</h3>
+<p>Dynamic DNA • 2026 - Present</p>
+</div>
+
+<div class="timeline-item">
+<h3>Bachelor of Science in Computer Science</h3>
+<p>University of Venda • 2021 - 2025</p>
+</div>
+
+</div>
+
+
+
+</section>
+
+<section id="experience" class="section">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Automation Support Specialist</h3>
+<p>Nedbank • 2025 - 2026</p>
+
+<p>
+Supported Robotic Process Automation solutions by monitoring production processes, troubleshooting incidents and resolving automation-related issues.
+</p>
+</div>
+
+</div>
+
+
+
+</section>
+
+
+<!-- My Projects -->
+
+<section id="projects" class="section">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Developer Portfolio</h3>
+<p>Modern responsive portfolio website built using HTML & CSS.</p>
+</div>
+
+<div class="card">
+<h3>Task Management System</h3>
+<p>Application for task tracking and productivity management.</p>
+</div>
+
+<div class="card">
+<h3>Student Management System</h3>
+<p>System for managing students, academic records and courses.</p>
+</div>
+
+<div class="card">
+<h3>Automation Dashboard</h3>
+<p>Dashboard for monitoring automation processes and incidents.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- Certifications -->
+
+<section id="certifications" class="section">
+
+<h2 class="section-title">Certifications</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>GenAI for Software Engineers</h3>
+<p>WeThinkCode • 2026</p>
+</div>
+
+<div class="card">
+<h3>Digital Learning</h3>
+<p>YES Employment Service • 2025</p>
+</div>
+
+<div class="card">
+<h3>Entrepreneurship</h3>
+<p>YES Employment Service • 2025</p>
+</div>
+
+<div class="card">
+<h3>BSc Computer Science</h3>
+<p>University of Venda • 2025</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CURRENT LEARNING JOURNEY -->
+
+<section class="section" id="learning">
+
+<h2 class="section-title">Current Learning Journey</h2>
+
+<div class="grid">
+
+<div class="card learning-card">
+
+<div class="learning-icon">💻</div>
+
+<h3>Software Development NQF Level 5</h3>
+
+<p>
+
+Currently completing Software Development NQF Level 5
+
+through Dynamic DNA, focusing on software engineering,
+
+programming, databases, APIs, and application development.
+
+</p>
+
+</div>
+
+<div class="card learning-card">
+
+<div class="learning-icon">📱</div>
+
+<h3>FNB App Academy</h3>
+
+<p>
+Building practical software development skills through
+industry-focused projects and real-world problem solving.
+
+</p>
+
+
+</div>
+
+<div class="card learning-card">
+
+<div class="learning-icon">🌿</div>
+
+<h3>Git & GitHub</h3>
+
+<p>
+Learning version control, repository management, branching strategies, collaboration workflows, pull requests, and best practices for software development teams using Git and GitHub.
+</p>
+
+</div>
+
+</div>
+
+</section>
+ 
+<!-- Technical Skills -->
+
+<section id="skills" class="section">
+
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="skills">
+
+<div class="skill">Python</div>
+<div class="skill">Java</div>
+<div class="skill">HTML5</div>
+<div class="skill">CSS3</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Git</div>
+<div class="skill">GitHub</div>
+<div class="skill">SQL</div>
+<div class="skill">REST APIs</div>
+<div class="skill">RPA</div>
+<div class="skill">Prompt Engineering</div>
+
+</div>
+
+</section>
+
+
+<section id="contact" class="section">
+
+<h2 class="section-title">Send Me A Message</h2>
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<input type="text" placeholder="Subject" required>
+
+<textarea rows="6" placeholder="Your Message" required></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+<br><br>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<h3>📧 Email</h3>
+<p>zwavhudigeneral02@gmail.com</p>
+</div>
+
+<div class="contact-card">
+<h3>📱 Phone</h3>
+<p>+27 60 816 4224</p>
+</div>
+
+<div class="contact-card">
+<h3>📍 Location</h3>
+<p>Johannesburg, South Africa</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Zwavhudi Travor Tshivhase • Software Developer Portfolio
+</footer>
+
+</body>
+</html>

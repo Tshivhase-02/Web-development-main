@@ -2,385 +2,294 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Zwavhudi Tshivhase CV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATS CV Builder</title>
 
 <style>
-@page {
-    size: A4;
-    margin: 12mm;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
-* {
-    box-sizing: border-box;
+body{
+    background:#f5f5f5;
 }
 
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #2d3748;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    font-size: 10.5pt;
-    background: #fff;
+.container{
+    display:flex;
+    min-height:100vh;
 }
 
-/* HEADER */
+/* SIDEBAR */
 
-.header-table {
-    display: table;
-    width: 100%;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 20px;
+.sidebar{
+    width:260px;
+    background:#f1ede7;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
 }
 
-.header-cell-left {
-    display: table-cell;
-    vertical-align: middle;
+.logo{
+    font-size:36px;
+    font-weight:bold;
+    color:#6b21a8;
+    margin-bottom:40px;
 }
 
-.header-cell-right {
-    display: table-cell;
-    width: 130px;
-    text-align: right;
-    vertical-align: middle;
+.menu a{
+    display:block;
+    text-decoration:none;
+    color:#333;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:10px;
+    font-size:18px;
 }
 
-.name {
-    font-size: 28pt;
-    font-weight: 700;
-    color: #1a365d;
-    margin: 0;
+.menu a.active{
+    background:white;
+    font-weight:bold;
 }
 
-.title {
-    font-size: 13pt;
-    font-weight: 600;
-    color: #3182ce;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 5px;
-    margin-bottom: 12px;
+.auth-buttons{
+    margin-top:auto;
 }
 
-.contact-info {
-    font-size: 10pt;
-    color: #4a5568;
+.btn-outline{
+    width:100%;
+    padding:15px;
+    border:2px solid #240046;
+    background:white;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-bottom:15px;
 }
 
-.contact-item {
-    margin-bottom: 4px;
+.btn-primary{
+    width:100%;
+    padding:15px;
+    background:#240046;
+    color:white;
+    border:none;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #3182ce;
+/* MAIN */
+
+.main{
+    flex:1;
+    padding:40px;
 }
 
-/* SECTIONS */
-
-.section {
-    margin-bottom: 22px;
-    page-break-inside: avoid;
+.header h1{
+    color:#120136;
+    margin-bottom:10px;
 }
 
-.section-title {
-    font-size: 12pt;
-    font-weight: 700;
-    color: #1a365d;
-    text-transform: uppercase;
-    border-left: 4px solid #3182ce;
-    padding-left: 10px;
-    margin-bottom: 10px;
+.header p{
+    color:#666;
+    margin-bottom:30px;
 }
 
-.summary-text {
-    text-align: justify;
+/* ACTION CARDS */
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
 }
 
-/* LISTS */
-
-ul {
-    margin: 0;
-    padding-left: 20px;
+.card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
-li {
-    margin-bottom: 6px;
+.new-cv{
+    border:3px dashed #cbd5e1;
+    text-align:center;
+    cursor:pointer;
 }
 
-/* JOBS / PROJECTS */
-
-.job-card {
-    margin-bottom: 15px;
-    page-break-inside: avoid;
+.plus{
+    font-size:50px;
+    color:#6b7280;
 }
 
-.job-header-table {
-    display: table;
-    width: 100%;
-    margin-bottom: 6px;
+.card h3{
+    margin-top:20px;
+    color:#1e293b;
 }
 
-.job-title-cell {
-    display: table-cell;
-    font-weight: 700;
-    font-size: 11pt;
+.resume-preview{
+    height:350px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
 }
 
-.job-date-cell {
-    display: table-cell;
-    width: 120px;
-    text-align: right;
-    color: #718096;
-    font-weight: 600;
+.preview-top{
+    height:100%;
+    display:flex;
 }
 
-.job-company {
-    color: #4a5568;
-    font-weight: 600;
-    margin-bottom: 6px;
+.preview-left{
+    width:40%;
+    background:#0f2d44;
 }
 
-.project-tools {
-    margin-top: 6px;
-    font-size: 9pt;
-    font-style: italic;
-    color: #4a5568;
+.preview-right{
+    flex:1;
+    background:white;
 }
 
-/* SKILLS GRID */
-
-.skills-grid {
-    display: table;
-    width: 100%;
+.resume-title{
+    margin-top:15px;
+    font-size:22px;
+    font-weight:bold;
 }
 
-.skill-column {
-    display: table-cell;
-    width: 50%;
-    vertical-align: top;
-    padding-right: 15px;
+.resume-meta{
+    color:#64748b;
+    margin-top:5px;
+}
+
+/* HERO */
+
+.hero{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.hero h2{
+    color:#120136;
+    margin-bottom:15px;
+    font-size:36px;
+}
+
+.hero p{
+    color:#555;
+    margin-bottom:20px;
+}
+
+.features{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.feature{
+    background:#f8fafc;
+    padding:10px 18px;
+    border-radius:20px;
+    color:#334155;
+    font-size:14px;
+}
+
+.build-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#240046;
+    color:white;
+    padding:14px 28px;
+    border-radius:10px;
+    font-weight:bold;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- HEADER -->
+<div class="container">
 
-<div class="header-table">
-    <div class="header-cell-left">
-        <h1 class="name">ZWAVHUDI TSHIVHASE</h1>
+    <div class="sidebar">
 
-        <div class="title">
-            Software Developer Trainee
+        <div class="logo">
+            CVForge
         </div>
 
-        <div class="contact-info">
-            <div class="contact-item">
-                📧 zwavhudigeneral02@gmail.com | 📱 +27 60 816 4224
+        <div class="menu">
+            #active">My CVs</a>
+            #
+            #
+            #ATS Checker</a>
+            #Career Resources</a>
+        </div>
+
+        <div class="auth-buttons">
+            <button class="btn-outline">Login</button>
+            <button class="btn-primary">Sign Up</button>
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <div class="hero">
+
+            <h2>Build ATS-Friendly CV</h2>
+
+            <p>
+                Create a professional CV that passes ATS screening and gets noticed by recruiters.
+            </p>
+
+            <div class="features">
+                <div class="feature">✅ ATS Optimized</div>
+                <div class="feature">✅ Free PDF Download</div>
+                <div class="feature">✅ Professional Templates</div>
+                <div class="feature">✅ Graduate Friendly</div>
             </div>
 
-            <div class="contact-item">
-                📍 Randburg, Gauteng
+            #">
+                Build My CV
+            </a>
+
+        </div>
+
+        <div class="header">
+            <h1>My CVs</h1>
+            <p>Create, manage and download your professional resumes.</p>
+        </div>
+
+        <div class="card-grid">
+
+            <div class="card new-cv">
+                <div class="plus">+</div>
+                <h3>Create New CV</h3>
             </div>
 
-            <div class="contact-item">
-                🔗 LinkedIn Profile | 💻 GitHub Profile
-            </div>
-        </div>
-    </div>
+            <div class="card">
 
-    <div class="header-cell-right">
-        .png" alt="Profile Picture" class="profile-pic">
-    </div>
-</div>
+                <div class="resume-preview">
+                    <div class="preview-top">
+                        <div class="preview-left"></div>
+                        <div class="preview-right"></div>
+                    </div>
+                </div>
 
-<!-- SUMMARY -->
+                <div class="resume-title">
+                    Graduate CV
+                </div>
 
-<div class="section">
-    <h2 class="section-title">Professional Summary</h2>
+                <div class="resume-meta">
+                    Last edited 5 minutes ago
+                </div>
 
-    <p class="summary-text">
-        Computer Science graduate with valuable experience in Robotic Process Automation (RPA) Support and a strong foundation in software development. Currently pursuing a Software Development NQF Level 5 qualification to further strengthen technical expertise and systems development capabilities. Passionate about engineering reliable, efficient, and scalable software solutions, solving complex programmatic challenges, and continuously learning emerging technologies. Proven ability to succeed within fast-paced, collaborative technical environments.
-    </p>
-</div>
-
-<!-- SKILLS -->
-
-<div class="section">
-    <h2 class="section-title">Technical Skills & Current Learning</h2>
-
-    <div class="skills-grid">
-
-        <div class="skill-column">
-            <ul>
-                <li><strong>Languages:</strong> Python, Java, JavaScript, HTML5, CSS3</li>
-                <li><strong>Frameworks & APIs:</strong> REST APIs</li>
-                <li><strong>Automation:</strong> Blue Prism, RPA Support</li>
-                <li><strong>Tools:</strong> Git, GitHub, OOP, Problem Solving</li>
-            </ul>
-        </div>
-
-        <div class="skill-column">
-            <ul>
-                <li>Software Development NQF Level 5</li>
-                <li>FNB App Academy</li>
-                <li>Git & GitHub Foundation</li>
-            </ul>
-        </div>
-
-    </div>
-</div>
-
-<!-- EXPERIENCE -->
-
-<div class="section">
-
-    <h2 class="section-title">Professional Experience</h2>
-
-    <div class="job-card">
-
-        <div class="job-header-table">
-            <div class="job-title-cell">
-                Automation Support Intern
             </div>
 
-            <div class="job-date-cell">
-                2025 – 2026
-            </div>
-        </div>
-
-        <ul>
-            <li>Provided high-quality production support for enterprise Robotic Process Automation (RPA) solutions.</li>
-            <li>Monitored bot performance metrics continuously to ensure stable execution and optimal runtime.</li>
-            <li>Investigated incidents, performed root-cause analysis on technical exceptions, and resolved automation failures swiftly.</li>
-            <li>Ensured business process continuity and reduced manual intervention through robust support workflows.</li>
-        </ul>
-
-    </div>
-
-</div>
-
-<!-- PROJECTS -->
-
-<div class="section">
-
-    <h2 class="section-title">Key Projects</h2>
-
-    <div class="job-card">
-
-        <div class="job-header-table">
-            <div class="job-title-cell">
-                Home Affairs Online Booking System
-            </div>
-        </div>
-
-        <ul>
-            <li>Designed and developed a secure Java-based application for appointment scheduling.</li>
-            <li>Implemented CRUD functionality and a relational MySQL database architecture.</li>
-            <li>Improved appointment management efficiency and streamlined user interactions.</li>
-        </ul>
-
-        <div class="project-tools">
-            Tools: Java, MySQL, NetBeans IDE, Git & GitHub
         </div>
 
     </div>
-
-    <div class="job-card">
-
-        <div class="job-header-table">
-            <div class="job-title-cell">
-                Email Automation Solution
-            </div>
-        </div>
-
-        <ul>
-            <li>Developed an automated email distribution process for personalized communication.</li>
-            <li>Reduced administrative effort and improved email delivery consistency.</li>
-        </ul>
-
-        <div class="project-tools">
-            Tools: Blue Prism, Outlook, SMTP Protocol
-        </div>
-
-    </div>
-
-    <div class="job-card">
-
-        <div class="job-header-table">
-            <div class="job-title-cell">
-                Professional Portfolio Website
-            </div>
-        </div>
-
-        <ul>
-            <li>Designed and developed a responsive portfolio website showcasing projects, skills and certifications.</li>
-        </ul>
-
-        <div class="project-tools">
-            Tools: HTML5, CSS3, JavaScript, Git, GitHub, VS Code
-        </div>
-
-    </div>
-
-</div>
-
-<!-- EDUCATION -->
-
-<div class="section">
-
-    <h2 class="section-title">Education</h2>
-
-    <div class="job-card">
-        <div class="job-company">
-            Software Development NQF Level 5
-        </div>
-
-        <div>
-            Dynamic DNA Academy
-        </div>
-
-        <div style="color:#718096;">
-            2026 – Present
-        </div>
-    </div>
-
-    <div class="job-card">
-
-        <div class="job-company">
-            Bachelor of Science in Computer Science
-        </div>
-
-        <div>
-            University of Venda | 2025
-        </div>
-
-        <div style="font-style:italic;color:#718096;">
-            Data Structures & Algorithms, DBMS, Software Engineering, Systems Analysis & Design
-        </div>
-
-    </div>
-
-</div>
-
-<!-- CERTIFICATIONS -->
-
-<div class="section">
-
-    <h2 class="section-title">Certifications</h2>
-
-    <ul>
-        <li>GenAI for Software Engineers</li>
-        <li>Digital Learning Programme</li>
-        <li>Entrepreneurship Course</li>
-    </ul>
 
 </div>
 

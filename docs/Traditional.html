@@ -3,295 +3,465 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ATS CV Builder</title>
+<title>Zwavhudi Tshivhase | Software Developer Portfolio</title>
+
+?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#f5f5f5;
+    min-height:100vh;
+    padding:20px;
+    color:white;
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e3a8a,
+        #0f172a
+    );
+    transition:.4s ease;
 }
 
 .container{
-    display:flex;
-    min-height:100vh;
+    max-width:1200px;
+    margin:auto;
 }
 
-/* SIDEBAR */
-
-.sidebar{
-    width:260px;
-    background:#f1ede7;
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:25px;
     padding:25px;
-    display:flex;
-    flex-direction:column;
+    margin-bottom:20px;
+    box-shadow:0 8px 32px rgba(0,0,0,.3);
+    animation:fadeUp .8s ease;
 }
-
-.logo{
-    font-size:36px;
-    font-weight:bold;
-    color:#6b21a8;
-    margin-bottom:40px;
-}
-
-.menu a{
-    display:block;
-    text-decoration:none;
-    color:#333;
-    padding:15px;
-    border-radius:12px;
-    margin-bottom:10px;
-    font-size:18px;
-}
-
-.menu a.active{
-    background:white;
-    font-weight:bold;
-}
-
-.auth-buttons{
-    margin-top:auto;
-}
-
-.btn-outline{
-    width:100%;
-    padding:15px;
-    border:2px solid #240046;
-    background:white;
-    border-radius:12px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-bottom:15px;
-}
-
-.btn-primary{
-    width:100%;
-    padding:15px;
-    background:#240046;
-    color:white;
-    border:none;
-    border-radius:12px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* MAIN */
-
-.main{
-    flex:1;
-    padding:40px;
-}
-
-.header h1{
-    color:#120136;
-    margin-bottom:10px;
-}
-
-.header p{
-    color:#666;
-    margin-bottom:30px;
-}
-
-/* ACTION CARDS */
-
-.card-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    border-radius:20px;
-    padding:30px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.08);
-}
-
-.new-cv{
-    border:3px dashed #cbd5e1;
-    text-align:center;
-    cursor:pointer;
-}
-
-.plus{
-    font-size:50px;
-    color:#6b7280;
-}
-
-.card h3{
-    margin-top:20px;
-    color:#1e293b;
-}
-
-.resume-preview{
-    height:350px;
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-}
-
-.preview-top{
-    height:100%;
-    display:flex;
-}
-
-.preview-left{
-    width:40%;
-    background:#0f2d44;
-}
-
-.preview-right{
-    flex:1;
-    background:white;
-}
-
-.resume-title{
-    margin-top:15px;
-    font-size:22px;
-    font-weight:bold;
-}
-
-.resume-meta{
-    color:#64748b;
-    margin-top:5px;
-}
-
-/* HERO */
 
 .hero{
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    margin-bottom:30px;
+    text-align:center;
 }
 
-.hero h2{
-    color:#120136;
-    margin-bottom:15px;
-    font-size:36px;
-}
-
-.hero p{
-    color:#555;
+.profile-container{
+    display:flex;
+    justify-content:center;
     margin-bottom:20px;
 }
 
-.features{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-bottom:25px;
+.profile-pic{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid rgba(255,255,255,.2);
+    box-shadow:
+        0 0 30px rgba(103,232,249,.5),
+        0 0 60px rgba(103,232,249,.2);
+    animation:float 4s ease-in-out infinite;
 }
 
-.feature{
-    background:#f8fafc;
-    padding:10px 18px;
-    border-radius:20px;
-    color:#334155;
-    font-size:14px;
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
 }
 
-.build-btn{
+.hero h2{
+    color:#67e8f9;
+    font-weight:500;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#d1d5db;
+}
+
+.actions{
+    margin-top:25px;
+}
+
+.theme-btn,
+.cv-btn{
     display:inline-block;
+    padding:12px 20px;
+    margin:5px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
     text-decoration:none;
-    background:#240046;
     color:white;
-    padding:14px 28px;
-    border-radius:10px;
-    font-weight:bold;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.15);
+    transition:.3s ease;
 }
+
+.theme-btn:hover,
+.cv-btn:hover{
+    background:#67e8f9;
+    color:#000;
+    transform:translateY(-3px);
+}
+
+.contact{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.contact a{
+    color:#67e8f9;
+    text-decoration:none;
+}
+
+.grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.section-title{
+    color:#67e8f9;
+    margin-bottom:15px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skills span{
+    padding:10px 15px;
+    border-radius:20px;
+    background:rgba(103,232,249,.15);
+    border:1px solid rgba(103,232,249,.3);
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.project-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    padding:20px;
+    position:relative;
+    overflow:hidden;
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        border-color .4s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    border-color:#67e8f9;
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+.project-card::before{
+    content:'';
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+    top:-100%;
+    left:-100%;
+    transition:.7s;
+}
+
+.project-card:hover::before{
+    top:100%;
+    left:100%;
+}
+
+.tech{
+    color:#67e8f9;
+    margin:10px 0;
+    font-size:.9rem;
+}
+
+.timeline-item{
+    margin-bottom:20px;
+}
+
+.timeline-item span{
+    color:#67e8f9;
+    font-size:.9rem;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#d1d5db;
+}
+
+/* LIGHT MODE */
+
+.light-mode{
+    background:#f4f7fb;
+    color:#111827;
+}
+
+.light-mode .glass{
+    background:rgba(255,255,255,0.75);
+    color:#111827;
+}
+
+.light-mode .hero p,
+.light-mode footer{
+    color:#374151;
+}
+
+.light-mode .project-card{
+    background:white;
+}
+
+.light-mode .theme-btn,
+.light-mode .cv-btn{
+    color:#111827;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .hero h2{
+        font-size:1rem;
+    }
+
+    .profile-pic{
+        width:140px;
+        height:140px;
+    }
+
+    .grid-2{
+        grid-template-columns:1fr;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .contact{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-    <div class="sidebar">
+    <section class="glass hero">
 
-        <div class="logo">
-            CVForge
+        <div class="profile-container">
+            profile.jpg="Zwavhudi Tshivhase" class="profile-pic">
         </div>
 
-        <div class="menu">
-            #active">My CVs</a>
-            #
-            #
-            #ATS Checker</a>
-            #Career Resources</a>
+        <h1>Zwavhudi Travor Tshivhase</h1>
+
+        <h2>Software Developer Trainee | RPA & Automation Support</h2>
+
+        <p>
+            Computer Science graduate passionate about software development,
+            backend engineering, workflow automation, and solving real-world
+            business problems through technology.
+        </p>
+
+        <div class="actions">
+            <button id="themeToggle" class="theme-btn">
+                🌙 Dark Mode
+            </button>
+
+            Zwavhudi_Tshivhase_CV.pdf
+                📄 Download CV
+            </a>
         </div>
 
-        <div class="auth-buttons">
-            <button class="btn-outline">Login</button>
-            <button class="btn-primary">Sign Up</button>
+        <div class="contact">
+            <span>📍 Randburg, Gauteng</span>
+            <span>📞 060 816 4224</span>
+            igeneral02@gmail.com">📧 Email</a>
+            <a href="https://github.com/Tshivhase-02" target="_blank">💻 GitHub</a>
+            ://linkedin.com/in/zwavhudi-tshivhase" target="_blank">🔗 LinkedIn</a>
         </div>
 
-    </div>
+    </section>
 
-    <div class="main">
+    <section class="grid-2">
 
-        <div class="hero">
-
-            <h2>Build ATS-Friendly CV</h2>
+        <div class="glass">
+            <h2 class="section-title">About Me</h2>
 
             <p>
-                Create a professional CV that passes ATS screening and gets noticed by recruiters.
+                Aspiring Software Developer with experience in Java,
+                Spring Boot, SQL, workflow automation, and enterprise support.
+                Passionate about building scalable software solutions and
+                continuously improving technical expertise.
             </p>
-
-            <div class="features">
-                <div class="feature">✅ ATS Optimized</div>
-                <div class="feature">✅ Free PDF Download</div>
-                <div class="feature">✅ Professional Templates</div>
-                <div class="feature">✅ Graduate Friendly</div>
-            </div>
-
-            #">
-                Build My CV
-            </a>
-
         </div>
 
-        <div class="header">
-            <h1>My CVs</h1>
-            <p>Create, manage and download your professional resumes.</p>
-        </div>
+        <div class="glass">
 
-        <div class="card-grid">
+            <h2 class="section-title">Tech Stack</h2>
 
-            <div class="card new-cv">
-                <div class="plus">+</div>
-                <h3>Create New CV</h3>
-            </div>
-
-            <div class="card">
-
-                <div class="resume-preview">
-                    <div class="preview-top">
-                        <div class="preview-left"></div>
-                        <div class="preview-right"></div>
-                    </div>
-                </div>
-
-                <div class="resume-title">
-                    Graduate CV
-                </div>
-
-                <div class="resume-meta">
-                    Last edited 5 minutes ago
-                </div>
-
+            <div class="skills">
+                <span>Java</span>
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Spring Boot</span>
+                <span>MySQL</span>
+                <span>REST APIs</span>
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>Blue Prism</span>
+                <span>Power Automate</span>
+                <span>Generative AI</span>
             </div>
 
         </div>
 
-    </div>
+    </section>
+
+    <section class="glass">
+
+        <h2 class="section-title">Featured Projects</h2>
+
+        <div class="projects">
+
+            <div class="project-card">
+                <h3>Home Affairs Online Booking System</h3>
+                <div class="tech">Java • MySQL</div>
+                <p>
+                    Full-stack appointment booking system featuring CRUD operations and relational database integration.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Email Processing Automation</h3>
+                <div class="tech">Blue Prism • Outlook</div>
+                <p>
+                    Automated email processing workflow that extracts and routes attachments securely.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <div class="tech">HTML • CSS</div>
+                <p>
+                    Responsive portfolio designed using modern UI and UX principles.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="glass">
+
+        <h2 class="section-title">Experience</h2>
+
+        <div class="timeline-item">
+            <h3>Automation Support Intern • Nedbank</h3>
+            <span>June 2025 – June 2026</span>
+
+            <p>
+                Monitored and supported production RPA solutions, resolved incidents,
+                and collaborated with technical teams to optimize automation performance.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="glass">
+
+        <h2 class="section-title">Education & Learning</h2>
+
+        <div class="timeline-item">
+            <h3>BSc Computer Science</h3>
+            <span>University of Venda</span>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Software Development NQF Level 5</h3>
+            <span>Dynamic DNA (In Progress)</span>
+        </div>
+
+        <div class="timeline-item">
+            <h3>FNB App Academy</h3>
+            <span>Mobile Application Development (Current)</span>
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Zwavhudi Travor Tshivhase
+    </footer>
 
 </div>
+
+<script>
+
+const toggleBtn = document.getElementById('themeToggle');
+
+toggleBtn.addEventListener('click', () => {
+
+    document.body.classList.toggle('light-mode');
+
+    if(document.body.classList.contains('light-mode')){
+        toggleBtn.innerHTML = '☀️ Light Mode';
+    } else {
+        toggleBtn.innerHTML = '🌙 Dark Mode';
+    }
+
+});
+
+</script>
 
 </body>
 </html>
